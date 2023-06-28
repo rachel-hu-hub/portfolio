@@ -1,11 +1,11 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-export default function About() {
+export default function Hobbies() {
   return (
     <Box padding={5}>
       <Typography align="center" fontSize={50}>
-        About Me
+        Hobbies
       </Typography>
     </Box>
   );
