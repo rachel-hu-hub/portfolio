@@ -28,19 +28,25 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <TopNav />
-      <Box height={60} />
+      <Box
+        bgcolor={"primary.main"}
+        width={"100vw"}
+        height={"100vh"}
+        position={"fixed"}
+      >
+        <TopNav />
 
-      {/* Handle Navigation */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experiences" element={<Experiences />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/hobbies" element={<Hobbies />} />
-        </Routes>
-      </BrowserRouter>
+        {/* Handle Navigation */}
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/experiences" element={<Experiences />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/hobbies" element={<Hobbies />} />
+          </Routes>
+        </BrowserRouter>
+      </Box>
     </ThemeProvider>
   );
 }
@@ -52,7 +58,11 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#EF9B0F",
+      main: "#391B56",
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#B78CE1",
       contrastText: "#fff",
     },
   },
