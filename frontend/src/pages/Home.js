@@ -12,7 +12,7 @@ export default function Home() {
       width={"100vw"}
       height={"100vh"}
     >
-      <img src={banner} alt="My Portfolio" style={{ display: "flex" }} />
+      <img src={banner} alt="My Portfolio" style={{ width: "80%" }} />
     </Box>
   );
 }

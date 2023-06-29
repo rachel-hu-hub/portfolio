@@ -28,12 +28,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        bgcolor={"primary.main"}
-        width={"100vw"}
-        height={"100vh"}
-        position={"fixed"}
-      >
+      <Box display="flex" flexDirection="column">
         <TopNav />
 
         {/* Handle Navigation */}
@@ -64,6 +59,10 @@ const theme = createTheme({
     secondary: {
       main: "#B78CE1",
       contrastText: "#fff",
+    },
+    neutral: {
+      main: "#E8DEF1",
+      contrastText: "#3B1854",
     },
   },
 });
