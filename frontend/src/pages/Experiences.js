@@ -10,7 +10,8 @@ export default function Experiences() {
       <Typography variant="h2" display="flex" justifyContent="center">
         Experiences
       </Typography>
-      <WorkSection />
+      <WorkSection position="Intern" />
+      <WorkSection position="Manager" />
       <Typography variant="h2" display="flex" justifyContent="center">
         My Travels
       </Typography>

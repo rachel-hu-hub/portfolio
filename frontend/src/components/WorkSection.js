@@ -4,12 +4,21 @@ import Jinja from "./Jinja";
 
 // Powered using Jinja template
 
-export default function WorkSection(props) {
+export default function WorkSection({
+  position = "Position",
+  company = "Company",
+  description = "Description",
+}) {
   const [HTML, setHTML] = useState();
+  const data = {
+    position: position,
+    company: company,
+    description: description,
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/work_section");
+        const response = await axios.post("/work_section", data);
         const { rendered_data } = response.data;
         setHTML(rendered_data);
       } catch (error) {

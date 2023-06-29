@@ -1,15 +1,14 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, request, render_template, jsonify
 
 app = Flask(__name__)
 
-@app.route('/work_section')
+@app.route('/work_section', methods=['POST'])
 def work_experience():
-    work_experiences = [
-        {'company': 'Company A', 'position': 'Position A'},
-        {'company': 'Company B', 'position': 'Position B'},
-        {'company': 'Company C', 'position': 'Position C'}
-    ]
-    rendered_data = render_template('work_section.html', work_experiences=work_experiences)
+    data = request.get_json()
+    position = data['position']
+    company = data['company']
+    description = data['description']
+    rendered_data = render_template('work_section.html', position=position, company=company, description=description)
     return jsonify(rendered_data=rendered_data)
 
 if __name__ == '__main__':
