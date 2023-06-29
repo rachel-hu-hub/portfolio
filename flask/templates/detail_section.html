@@ -1,0 +1,29 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="work_section.css" />
+</head>
+
+<!-- Generated HTML from figma using a custom component I created -->
+<!-- The only difference is I added Jinja integration -->
+<table>
+  <tr>
+    <td>
+      <div>
+        <h1 className="text-wrapper"><font face="Arial">{{ position }}</font></h1>
+        <h2 className="text-wrapper-2"><font face="Arial">{{ company }}</font></h1>
+        <p className="in-this-example-the"><font face="Arial">{{ description }}</font></p>
+      </div>
+    </td>
+    <td>
+      <img
+        className="ellipse"
+        alt="Experience Photo"
+        width="200"
+        height="210"
+        src="https://cdn.pixabay.com/photo/2017/12/03/14/31/kawaii-2995014_1280.png"
+      />
+    </td>
+  </tr>
+</table>
