@@ -7,7 +7,7 @@ import WidgetsIcon from "@mui/icons-material/Widgets";
 
 export default function TopNav() {
   return (
-    <AppBar color="primary" position="fixed">
+    <AppBar color="secondary" position="fixed">
       <Toolbar>
         <IconButton
           href="http://localhost:3000/"
