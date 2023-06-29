@@ -1,12 +1,15 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import TravelMap from "../components/TravelMap";
 
 export default function Experiences() {
   return (
     <Box padding={5}>
-      <Typography align="center" fontSize={50}>
-        Experiences
+      <Box height={70} />
+      <Typography variant="h2" display="flex" justifyContent="center">
+        My Travels
       </Typography>
+      <TravelMap />
     </Box>
   );
 }
