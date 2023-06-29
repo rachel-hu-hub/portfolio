@@ -1,0 +1,87 @@
+.box {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.box .frame-wrapper {
+  border: 0px none;
+  height: 246px;
+  width: 1134px;
+}
+
+.box .frame {
+  align-items: center;
+  display: flex;
+  gap: 53px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: fit-content;
+}
+
+.box .div {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 18.43px;
+  position: relative;
+  width: fit-content;
+}
+
+.box .frame-2 {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 835px;
+}
+
+.box .text-wrapper {
+  color: #000000;
+  font-family: "Open Sans-Bold", Helvetica;
+  font-size: 50.7px;
+  font-weight: 700;
+  height: 50.69px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.92px;
+  position: relative;
+  white-space: nowrap;
+  width: 566.8px;
+}
+
+.box .text-wrapper-2 {
+  color: #000000;
+  font-family: "Open Sans-Italic", Helvetica;
+  font-size: 48.9px;
+  font-style: italic;
+  font-weight: 400;
+  height: 75.53px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.92px;
+  position: relative;
+  width: 173.27px;
+}
+
+.box .in-this-example-the {
+  color: #000000;
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 18.2px;
+  font-weight: 400;
+  height: 84.79px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: 793.39px;
+}
+
+.box .ellipse {
+  height: 300px;
+  min-width: 246px;
+  object-fit: cover;
+  position: relative;
+}
