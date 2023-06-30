@@ -1,22 +1,22 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
+import skateboard from "../images/skateboard.png";
+import running from "../images/running.png";
+import cooking from "../images/cooking.png";
 
 const Hobbies = () => {
   const hobbies = [
     {
       name: "Skateboarding",
-      image:
-        "https://static.vecteezy.com/system/resources/previews/011/035/218/original/skateboard-3d-pose-model-illustration-free-png.png",
+      image: skateboard,
     },
     {
       name: "Running",
-      image:
-        "https://cdn.pixabay.com/photo/2014/04/03/10/50/run-311447_640.png",
+      image: running,
     },
     {
       name: "Cooking",
-      image:
-        "https://www.pngall.com/wp-content/uploads/12/Cooking-PNG-Free-Image.png",
+      image: cooking,
     },
   ];
 
