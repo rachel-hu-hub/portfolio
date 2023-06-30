@@ -28,6 +28,9 @@ export default function TopNav() {
         <Button color="inherit" href="http://localhost:3000/experiences">
           Experiences
         </Button>
+        <Button color="inherit" href="http://localhost:3000/education">
+          Education
+        </Button>
         <Button color="inherit" href="http://localhost:3000/hobbies">
           Hobbies
         </Button>
