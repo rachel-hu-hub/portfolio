@@ -1,3 +1,7 @@
+# Group Portfolio 🎉
+### Preview:
+<img width="1438" alt="Screen Shot 2023-06-29 at 10 17 59 PM" src="https://github.com/Rachelonline/group-portfolio/assets/39543727/0b5a1d82-e8de-482a-b745-1a20d99a0312">
+
 # Setup Instructions by Rachel (Flask Backend + React Frontent) ✨✨✨
 ## Part 1. Backend
 Enter the correct directory.
