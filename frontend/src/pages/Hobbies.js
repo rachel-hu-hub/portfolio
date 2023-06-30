@@ -26,9 +26,10 @@ const Hobbies = () => {
       flexDirection={"column"}
       justifyContent="center"
       alignItems="center"
+      bgcolor={"primary.main"}
     >
       <Box height={40} />
-      <Typography variant="h1" margin={7}>
+      <Typography variant="h1" margin={7} color={"primary.contrastText"}>
         Hobbies
       </Typography>
       {hobbies.map((hobby, index) => (
