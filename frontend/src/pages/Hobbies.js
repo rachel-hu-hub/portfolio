@@ -1,33 +1,53 @@
-import React from 'react';
+import React from "react";
+import { Typography, Box } from "@mui/material";
+import skateboard from "../images/skateboard.png";
+import running from "../images/running.png";
+import cooking from "../images/cooking.png";
 
 const Hobbies = () => {
   const hobbies = [
     {
-      name: 'skateboarding',
-      image: require('./skateboarding.jpg').default,
+      name: "Skateboarding",
+      image: skateboard,
     },
     {
-      name: 'running',
-      image: require('./running.jpg').default,
+      name: "Running",
+      image: running,
     },
     {
-      name: 'cooking',
-      image: require('./cooking.jpg').default,
+      name: "Cooking",
+      image: cooking,
     },
   ];
 
   return (
-    <div>
-      <h2>Hobbies</h2>
-      <ul>
-        {hobbies.map((hobby, index) => (
-          <li key={index}>
-            <img src={hobby.image} alt={hobby.name} />
+    <Box
+      display="flex"
+      flexDirection={"column"}
+      justifyContent="center"
+      alignItems="center"
+      bgcolor={"primary.main"}
+    >
+      <Box height={40} />
+      <Typography variant="h1" margin={7} color={"primary.contrastText"}>
+        Hobbies
+      </Typography>
+      {hobbies.map((hobby, index) => (
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          bgcolor={"neutral.main"}
+          width={"100vw"}
+        >
+          <Typography variant="h3" paddingX={10}>
             {hobby.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+          </Typography>
+          <img src={hobby.image} alt={hobby.name} width={200} height={200} />
+        </Box>
+      ))}
+    </Box>
   );
 };
 
