@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Experiences from "./pages/Experiences";
-import Projects from "./pages/Projects";
 import Hobbies from "./pages/Hobbies";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -37,7 +36,6 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/experiences" element={<Experiences />} />
-            <Route path="/projects" element={<Projects />} />
             <Route path="/hobbies" element={<Hobbies />} />
           </Routes>
         </BrowserRouter>

@@ -1,33 +1,52 @@
-import React from 'react';
+import React from "react";
+import { Typography, Box } from "@mui/material";
 
 const Hobbies = () => {
   const hobbies = [
     {
-      name: 'skateboarding',
-      image: require('./skateboarding.jpg').default,
+      name: "Skateboarding",
+      image:
+        "https://static.vecteezy.com/system/resources/previews/011/035/218/original/skateboard-3d-pose-model-illustration-free-png.png",
     },
     {
-      name: 'running',
-      image: require('./running.jpg').default,
+      name: "Running",
+      image:
+        "https://cdn.pixabay.com/photo/2014/04/03/10/50/run-311447_640.png",
     },
     {
-      name: 'cooking',
-      image: require('./cooking.jpg').default,
+      name: "Cooking",
+      image:
+        "https://www.pngall.com/wp-content/uploads/12/Cooking-PNG-Free-Image.png",
     },
   ];
 
   return (
-    <div>
-      <h2>Hobbies</h2>
-      <ul>
-        {hobbies.map((hobby, index) => (
-          <li key={index}>
-            <img src={hobby.image} alt={hobby.name} />
+    <Box
+      display="flex"
+      flexDirection={"column"}
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Box height={40} />
+      <Typography variant="h1" margin={7}>
+        Hobbies
+      </Typography>
+      {hobbies.map((hobby, index) => (
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          bgcolor={"neutral.main"}
+          width={"100vw"}
+        >
+          <Typography variant="h3" paddingX={10}>
             {hobby.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+          </Typography>
+          <img src={hobby.image} alt={hobby.name} width={200} height={200} />
+        </Box>
+      ))}
+    </Box>
   );
 };
 
