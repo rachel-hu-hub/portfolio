@@ -1,3 +1,38 @@
+# Group Portfolio 🎉
+### Preview:
+<img width="1438" alt="Screen Shot 2023-06-29 at 10 17 59 PM" src="https://github.com/Rachelonline/group-portfolio/assets/39543727/0b5a1d82-e8de-482a-b745-1a20d99a0312">
+
+# Setup Instructions by Rachel (Flask Backend + React Frontend) ✨✨✨
+## Part 1. Backend
+Enter the correct directory.
+```bash
+cd flask
+```
+Setup Flask by downloading all the requirements in a virtual environment.
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+Then, start the server. This will fetch information for the frontend.
+```bash
+python3 server.py
+```
+
+## Part 2. Frontend
+Then, open a new terminal and enter the frontend directory.
+```bash
+cd frontend
+```
+Download the dependencies for the frontend.
+```bash
+npm install
+```
+Then, run the program and you should see the website open up in http://localhost:3000/!
+```bash
+npm start
+```
+---
 # Production Engineering - Week 1 - Portfolio Site
 
 Welcome to the MLH Fellowship! During Week 1, you'll be using Flask to build a portfolio site. This site will be the foundation for activities we do in future weeks so spend time this week making it your own and reflect your personality!
