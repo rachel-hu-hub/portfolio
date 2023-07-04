@@ -18,4 +18,4 @@ def serve_static(path):
     return app.send_static_file(path)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=6000)
