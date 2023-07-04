@@ -10,7 +10,7 @@ export default function TopNav() {
     <AppBar color="secondary" position="fixed">
       <Toolbar>
         <IconButton
-          href="http://localhost:3000/"
+          href="/"
           size="large"
           edge="start"
           color="inherit"
@@ -19,19 +19,19 @@ export default function TopNav() {
         >
           <WidgetsIcon />
         </IconButton>
-        <Button color="inherit" href="http://localhost:3000/">
+        <Button color="inherit" href="/">
           Home
         </Button>
-        <Button color="inherit" href="http://localhost:3000/about">
+        <Button color="inherit" href="/about">
           About
         </Button>
-        <Button color="inherit" href="http://localhost:3000/experiences">
+        <Button color="inherit" href="/experiences">
           Experiences
         </Button>
-        <Button color="inherit" href="http://localhost:3000/education">
+        <Button color="inherit" href="/education">
           Education
         </Button>
-        <Button color="inherit" href="http://localhost:3000/hobbies">
+        <Button color="inherit" href="/hobbies">
           Hobbies
         </Button>
       </Toolbar>
