@@ -67,7 +67,7 @@ export default function About() {
         <Typography color={"neutral.main"} variant="h1">
           My Journey
         </Typography>
-        <Box height={100} />
+        <Box height={50} />
         <LeftImageSection
           image={EatTogether}
           title="Eat Together"

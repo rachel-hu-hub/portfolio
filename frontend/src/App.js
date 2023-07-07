@@ -1,8 +1,6 @@
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Experiences from "./pages/Experiences";
-import Education from "./pages/Education";
-import Hobbies from "./pages/Hobbies";
+import Projects from "./pages/Projects";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box, ThemeProvider } from "@mui/material";
@@ -25,9 +23,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/experiences" element={<Experiences />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/hobbies" element={<Hobbies />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </BrowserRouter>
       </Box>
