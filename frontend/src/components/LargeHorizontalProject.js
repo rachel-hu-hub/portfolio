@@ -7,6 +7,7 @@ export default function LargeHorizontalProject({
   description = "Description",
   color = "neutral.main",
   textColor = "neutral.contrastText",
+  margin = 2,
 }) {
   return (
     <Box
@@ -16,13 +17,15 @@ export default function LargeHorizontalProject({
       bgcolor={color}
       display={"flex"}
       alignItems={"center"}
+      margin={margin}
     >
-      <img src={image} alt="Project" width={700} height={400} />
+      <img src={image} alt="Project" style={{ width: 700, height: 370 }} />
       <Box
         display={"flex"}
         alignItems={"center"}
         flexDirection={"column"}
         padding={4}
+        textAlign={"center"}
       >
         <Typography variant="h2" color={textColor}>
           {title}
