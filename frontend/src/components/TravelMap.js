@@ -27,6 +27,11 @@ const markers = [
   },
   {
     markerOffset: -15,
+    name: "Beijing",
+    coordinates: [116.4074, 39.9042],
+  },
+  {
+    markerOffset: -15,
     name: "New York",
     coordinates: [-74.006, 40.7128],
   },
@@ -41,19 +46,19 @@ const TravelMap = () => {
             <Geography
               key={geo.rsmKey}
               geography={geo}
-              fill="#EAEAEC"
-              stroke="#D6D6DA"
+              fill="#713DA4"
+              stroke="#935EC6"
             />
           ))
         }
       </Geographies>
       {markers.map(({ name, coordinates, markerOffset }) => (
         <Marker key={name} coordinates={coordinates}>
-          <circle r={10} fill="#B78CE1" stroke="#fff" strokeWidth={2} />
+          <circle r={8} fill="#D4A1E4" strokeWidth={2} />
           <text
             textAnchor="middle"
             y={markerOffset}
-            style={{ fontFamily: "system-ui", fill: "#5D5A6D" }}
+            style={{ fontFamily: "system-ui", fill: "#fff" }}
           >
             {name}
           </text>

@@ -58,7 +58,7 @@ const theme = createTheme({
     },
     body1: {
       fontFamily: "Lato",
-      fontSize: "1rem",
+      fontSize: "1.5rem",
       textTransform: "none",
     },
   },

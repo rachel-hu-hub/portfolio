@@ -1,49 +1,102 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import banner from "../images/about-header.png";
+import { Box, Typography, Button } from "@mui/material";
+import TravelMap from "../components/TravelMap";
+import LeftImageSection from "../components/LeftImageSection";
+import RightImageSection from "../components/RightImageSection";
+
+import IntroPhoto from "../images/intro-photo.png";
+import EatTogether from "../images/eat-together.png";
+import GCIL from "../images/gcil-logo.png";
+import Amplitude from "../images/amplitude-logo.png";
+import MLH from "../images/mlh-logo.png";
 
 export default function About() {
   return (
-    <Box
-      display={"flex"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bgcolor={"neutral.main"}
-      flexDirection="column"
-      variant="h1"
-    >
-      <Box bgcolor={"neutral.main"} height={70} />
-      <img src={banner} alt="About Me" style={{ width: "50%" }} />
+    <Box display={"flex"} bgcolor={"neutral.main"} flexDirection={"column"}>
+      <Box bgcolor={"neutral.main"} height={80} />
       <Box
-        bgcolor={"primary.main"}
-        paddingTop={10}
-        paddingBottom={10}
-        paddingLeft={22}
-        paddingRight={22}
+        display={"flex"}
+        bgcolor={"neutral.main"}
+        flexDirection={"column"}
+        paddingX={15}
+        paddingY={10}
       >
-        <Typography variant="h5" component="div" color={"primary.contrastText"}>
-          Hey, I'm Rachel Hu, a computer science student who loves building
-          things with code. Alongside my tech background, I have a passion for
-          policy research and political engagement.
-          <br />
-          <br />
-          As the founder of Eat Together, a Seattle startup, I created an app
-          that connected students through food and meaningful conversations at
-          over 100 meetups on campus.
-          <br />
-          <br />
-          During my software engineering internship at Amplitude, I developed a
-          privacy-focused content view history feature and collaborated on
-          streamlining updates with my team. At the Parikrma Humanity Foundation
-          in Bangalore, I researched and implemented programs to support
-          underprivileged children and contributed to designing educational
-          initiatives.
-          <br />
-          <br />
-          Currently pursuing my Computer Science degree at the University of
-          Washington, I'm driven by attention to detail and a desire to make a
-          positive impact through coding.
+        <Box display={"flex"} justifyContent={"center"}>
+          <img
+            src={IntroPhoto}
+            alt="Me on a swing."
+            style={{ width: "33%", height: "fixed", alignSelf: "center" }}
+          />
+          <Box marginX={5} flexDirection={"column"}>
+            <Typography
+              variant="body1"
+              fontSize={60}
+              color={"neutral.contrastText"}
+            >
+              Hi, I'm Rachel and I love building things with code!
+            </Typography>
+            <Typography variant="body1" color={"neutral.contrastText"}>
+              <br />
+              I'm entering my 3rd year in Computer Science at the University of
+              Washington and have built strong skills in <b>communication</b>,
+              <b> leadership</b>, and <b>writing quality code</b>.
+            </Typography>
+            <Typography variant="body1" color={"neutral.contrastText"}>
+              <br />I aspire to continue growing as a software engineer and
+              creating cool things! While your here, be sure to say hi:
+            </Typography>
+            <Button
+              variant="outlined"
+              color="primary"
+              style={{ width: 300, height: 80, marginTop: 50 }}
+              target="blank"
+              href="https://www.linkedin.com/in/rachehu/"
+            >
+              <Typography variant="body1">get in touch {">"} </Typography>
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+      <Box
+        display={"flex"}
+        alignItems={"center"}
+        bgcolor={"primary.main"}
+        flexDirection={"column"}
+        padding={10}
+      >
+        <Typography color={"neutral.main"} variant="h1">
+          My Journey
         </Typography>
+        <Box height={100} />
+        <LeftImageSection
+          image={EatTogether}
+          title="Eat Together"
+          subtitle="Founder | Jan 2022 - Present | Seattle"
+          description="Created an app startup that connects students from all backgrounds over the
+universality of food. Our matching algorithm takes in schedules and interests so
+users can spontaneously find others to share a meal. Selected for the Dempsey
+Startup Competition Investment Round, and released our app to 60+ beta testers
+initiating 100+ meetups around campus."
+        />
+        <RightImageSection
+          image={Amplitude}
+          title="Amplitude"
+          subtitle="Software Engineer Intern | Jun - Sep 2022 | San Francisco"
+          description="Developed a content view history feature that interfaced with a database of over 10 million entries. Reviewed and wrote 40+ GitHub pull requests, delivering streamlined updates and improvement reports to the collaboration team."
+        />
+        <LeftImageSection
+          image={GCIL}
+          title="Grand Challenges Impact Lab"
+          subtitle="Project Intern | Jan - Mar 2023 | Bangalore"
+          description="Collaborated at the grassroots level to empower children from the slums with quality education, nutrition, healthcare, and family care. Delivered research reports to the Parikrma Humanity Foundation, helping design an innovative nature site intended to shift paradigms in the Indian education system. Co-led an initiative to destigmatize mental health in India through a network of parent circles."
+        />
+        <RightImageSection
+          image={MLH}
+          title="Major League Hacking"
+          subtitle="Product Engineering Fellow | Jun 2023 - Present | Remote"
+          description="Began an internship alternative to 'learn by doing' and explore Product Engineering with the guidance of mentors from Meta. I'm excited to continue growing and can't wait to see what happens next!"
+        />
+        <TravelMap />
       </Box>
     </Box>
   );
