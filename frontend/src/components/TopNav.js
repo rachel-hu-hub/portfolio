@@ -3,36 +3,39 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import WidgetsIcon from "@mui/icons-material/Widgets";
+import profile from "../images/profile.png";
+import { Typography } from "@mui/material";
 
 export default function TopNav() {
   return (
     <AppBar color="secondary" position="fixed">
-      <Toolbar>
+      <Toolbar sx={{ justifyContent: "center" }}>
         <IconButton
           href="/"
           size="large"
           edge="start"
           color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
+          sx={{ mr: 2, marginX: 5 }}
         >
-          <WidgetsIcon />
+          <img
+            src={profile}
+            alt="Profile"
+            style={{ width: "70px", borderRadius: "50%" }}
+          />
         </IconButton>
-        <Button color="inherit" href="/">
-          Home
+        <Button color="inherit" href="/about" sx={{ marginX: 2 }}>
+          <Typography variant="h3">about</Typography>
         </Button>
-        <Button color="inherit" href="/about">
-          About
+        <Button color="inherit" href="/projects" sx={{ marginX: 2 }}>
+          <Typography variant="h3">projects</Typography>
         </Button>
-        <Button color="inherit" href="/experiences">
-          Experiences
-        </Button>
-        <Button color="inherit" href="/education">
-          Education
-        </Button>
-        <Button color="inherit" href="/hobbies">
-          Hobbies
+        <Button
+          color="inherit"
+          href="https://drive.google.com/file/d/17wEqY2s2UKVcgHC5DLXDfX7TdfT_r3kk/view?usp=sharing"
+          target="blank"
+          sx={{ marginX: 2 }}
+        >
+          <Typography variant="h3">resume</Typography>
         </Button>
       </Toolbar>
     </AppBar>
