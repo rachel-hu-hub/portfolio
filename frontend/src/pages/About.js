@@ -33,7 +33,7 @@ export default function About() {
               fontSize={60}
               color={"neutral.contrastText"}
             >
-              Hi, I'm Rachel and I love building things with code!
+              Hi, I'm Rachel Hu and I love building things with code!
             </Typography>
             <Typography variant="body1" color={"neutral.contrastText"}>
               <br />
