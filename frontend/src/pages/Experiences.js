@@ -17,7 +17,7 @@ export default function Experiences() {
           description="Created an app startup that connects students from all backgrounds over the
 universality of food. Our matching algorithm takes in schedules and interests so
 users can spontaneously find others to share a meal. Selected for the Dempsey
-Startup Competition Investment Round, and released our app to 60+ beta testers,
+Startup Competition Investment Round and released our app to 60+ beta testers,
 initiating 100+ meetups around campus."
         />
         <DetailSection

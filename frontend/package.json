@@ -1,12 +1,14 @@
 {
   "name": "frontend",
+  "homepage": "http://rachelhu.duckdns.org/",
   "version": "0.1.0",
   "license": "MIT",
   "private": true,
-  "proxy": "http://127.0.0.1:5000",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/lato": "^5.0.4",
+    "@fontsource/pacifico": "^5.0.4",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.6",
     "@testing-library/jest-dom": "^5.14.1",
@@ -22,10 +24,11 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=5000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy-production": "react-scripts build && scp -r ./build/* newuser@146.190.118.121:/usr/projects/portfolio/frontend"
   },
   "eslintConfig": {
     "extends": [
