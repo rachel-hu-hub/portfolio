@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Jinja from "./Jinja";
+import { Box, Typography } from "@mui/material";
 
 // Powered using Jinja template
 
@@ -19,5 +20,17 @@ export default function Form(props) {
     fetchData();
   }, []);
 
-  return Jinja(HTML);
+  return (
+    <Box
+      padding={5}
+      display={"flex"}
+      alignItems={"center"}
+      flexDirection={"column"}
+    >
+      <Typography variant="h2" padding={5} color={"neutral.contrastText"}>
+        Add a Post
+      </Typography>
+      {Jinja(HTML)}
+    </Box>
+  );
 }

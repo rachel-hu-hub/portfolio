@@ -55,7 +55,7 @@ def delete_time_line_post(id):
         post = TimelinePost.get(TimelinePost.id == id)
         post.delete_instance()
         return jsonify({'message': 'Post deleted.'})
-    except TimelinePost.DoesNotExit:
+    except TimelinePost.DoesNotExist:
         return jsonify({'error': "Post not found."}), 404
     
 @app.route('/timeline_form')

@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Form Submission with AJAX</title>
+    <title>Form Submission</title>
   </head>
   <body>
-    <h1>Form Submission</h1>
     <form action="/api/timeline_post" method="post">
       <!-- Add your form inputs here -->
-      <input type="text" name="username" placeholder="Name" />
-      <input type="text" name="email" placeholder="Email" required />
-      <input type="text" name="content" placeholder="Content" required />
+      <input
+        type="text"
+        name="username"
+        placeholder="Name"
+        size="40"
+        required
+      />
+      <input type="text" name="email" placeholder="Email" size="40" required />
+      <input
+        type="text"
+        name="content"
+        placeholder="Content"
+        size="40"
+        required
+      />
       <button type="submit">Submit</button>
     </form>
   </body>
