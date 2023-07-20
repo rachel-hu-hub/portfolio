@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6113028.css",
-    "main.js": "/static/js/main.3ff4f92c.js",
+    "main.js": "/static/js/main.456d99c8.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/paxos-demo.png": "/static/media/paxos-demo.b4882646363c3b479a1f.png",
     "static/media/eat-together-demo.png": "/static/media/eat-together-demo.b3dc67346c866f0b85ea.png",
@@ -35,11 +35,11 @@
     "static/media/lato-latin-ext-400-normal.woff": "/static/media/lato-latin-ext-400-normal.c62d8b2772865c9ac5ba.woff",
     "index.html": "/index.html",
     "main.b6113028.css.map": "/static/css/main.b6113028.css.map",
-    "main.3ff4f92c.js.map": "/static/js/main.3ff4f92c.js.map",
+    "main.456d99c8.js.map": "/static/js/main.456d99c8.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6113028.css",
-    "static/js/main.3ff4f92c.js"
+    "static/js/main.456d99c8.js"
   ]
 }
