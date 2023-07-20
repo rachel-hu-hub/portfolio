@@ -1,11 +1,13 @@
 import os
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, redirect, request, render_template, jsonify
 from peewee import *
 from dotenv import load_dotenv
 import datetime
 from playhouse.shortcuts import model_to_dict
+from flask_cors import CORS
 
 app = Flask(__name__, static_folder='static')
+CORS(app)
 
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
                      user=os.getenv("MYSQL_USER"),
@@ -29,12 +31,13 @@ mydb.create_tables([TimelinePost])
 # Timeline Posts
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['name']
+    name = request.form['username']
     email = request.form['email']
     content = request.form['content']
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
     
-    return model_to_dict(timeline_post)
+    referring_url = request.referrer
+    return redirect(referring_url)
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -54,6 +57,21 @@ def delete_time_line_post(id):
         return jsonify({'message': 'Post deleted.'})
     except TimelinePost.DoesNotExit:
         return jsonify({'error': "Post not found."}), 404
+    
+@app.route('/timeline_form')
+def timeline_form():
+    rendered_data = render_template('timeline_form.html')
+    return jsonify(rendered_data=rendered_data)
+
+@app.route('/timeline', methods=['GET'])
+def timeline():
+    timeline_posts = [
+        model_to_dict(p)
+        for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    ]
+
+    rendered_data = render_template('timeline.html', timeline_posts=timeline_posts)
+    return jsonify(rendered_data=rendered_data)
 
 # Using custom templates
 @app.route('/detail_section', methods=['POST'])
