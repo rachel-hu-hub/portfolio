@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "homepage": "http://rachelhu.duckdns.org/",
+  "proxy": "http://127.0.0.1:5000",
   "version": "0.1.0",
   "license": "MIT",
   "private": true,
@@ -24,7 +25,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "PORT=5000 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
