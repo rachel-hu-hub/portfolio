@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Submission</title>
+  </head>
+  <body>
+    <form action="/api/timeline_post" method="post">
+      <!-- Add your form inputs here -->
+      <input
+        type="text"
+        name="username"
+        placeholder="Name"
+        size="40"
+        required
+      />
+      <input type="text" name="email" placeholder="Email" size="40" required />
+      <input
+        type="text"
+        name="content"
+        placeholder="Content"
+        size="40"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
