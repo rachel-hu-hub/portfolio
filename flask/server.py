@@ -25,9 +25,6 @@ class TimelinePost(Model):
     class Meta:
         database = mydb
 
-mydb.connect()
-mydb.create_tables([TimelinePost])
-
 # Timeline Posts
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
@@ -90,4 +87,6 @@ def serve_static(path):
     return app.send_static_file(path)
 
 if __name__ == '__main__':
+    mydb.connect()
+    mydb.create_tables([TimelinePost])
     app.run(port=5000)
