@@ -1,8 +1,9 @@
 import unittest
 from peewee import *
+import os
+os.environ['TESTING'] = 'true'
 
 from server import TimelinePost
-# from app import TimelinePost
 
 MODELS = [TimelinePost]
 test_db = SqliteDatabase(':memory:')

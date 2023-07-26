@@ -9,12 +9,16 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder='static')
 CORS(app)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-                     user=os.getenv("MYSQL_USER"),
-                     password=os.getenv("MYSQL_PASSWORD"),
-                     host=os.getenv("MYSQL_HOST"),
-                     port=3306
-                     )
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+                        user=os.getenv("MYSQL_USER"),
+                        password=os.getenv("MYSQL_PASSWORD"),
+                        host=os.getenv("MYSQL_HOST"),
+                        port=3306
+                        )
 
 class TimelinePost(Model):
     name = CharField()
@@ -32,9 +36,7 @@ def post_time_line_post():
     email = request.form['email']
     content = request.form['content']
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
-    
-    referring_url = request.referrer
-    return redirect(referring_url)
+    return timeline_post
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -79,6 +81,12 @@ def detail_section():
     description = data['description']
     image_link = data['image_link']
     rendered_data = render_template('detail_section.html', position=position, company=company, description=description, image_link=image_link)
+    return jsonify(rendered_data=rendered_data)
+
+# Create pages for testing, main pages hosted with React
+@app.route('/')
+def home():
+    rendered_data = render_template('timeline_form.html')
     return jsonify(rendered_data=rendered_data)
 
 # Route for serving static files
