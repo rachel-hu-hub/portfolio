@@ -36,7 +36,7 @@ def post_time_line_post():
     email = request.form['email']
     content = request.form['content']
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
-    return timeline_post
+    return model_to_dict(timeline_post)
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -86,8 +86,9 @@ def detail_section():
 # Create pages for testing, main pages hosted with React
 @app.route('/')
 def home():
-    rendered_data = render_template('timeline_form.html')
-    return jsonify(rendered_data=rendered_data)
+    title = "Rachel Hu"
+    bio = "I'm entering my 3rd year in Computer Science at the University of Washington and have built strong skills in communication, leadership, and writing quality code. I aspire to continue growing as a software engineer and creating cool things!"
+    return render_template('home_demo.html', title=title, bio=bio)
 
 # Route for serving static files
 @app.route('/static/<path:path>')
