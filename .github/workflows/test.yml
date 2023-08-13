@@ -21,13 +21,16 @@ jobs:
           python-version: "3.10.4"
 
       - name: Setup Python Virtual Env
-        run: cd flask
+        run: |
+          cd flask
           python3 -m venv venv
 
       - name: Install Dependencies
-        run: cd flask
+        run: |
+          cd flask
           venv/bin/pip install -r requirements.txt
 
       - name: Run Tests
-        run: cd flask
+        run: |
+          cd flask
           ./run_test.sh
