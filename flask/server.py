@@ -4,10 +4,8 @@ from peewee import *
 from dotenv import load_dotenv
 import datetime
 from playhouse.shortcuts import model_to_dict
-from flask_cors import CORS
 
 app = Flask(__name__, static_folder='static')
-CORS(app)
 
 if os.getenv("TESTING") == "true":
     print("Running in test mode")
