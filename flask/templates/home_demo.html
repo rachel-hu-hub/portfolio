@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rachel Hu</title>
+    <style>
+      /* Add your CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #391b56;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      main {
+        background-color: #e8def1;
+        color: #3b1854;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer {
+        background-color: #391b56;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+
+    <main>
+      <h1>Hi, I'm Rachel Hu and I love building things with code!</h2>
+      <h2>
+        {{ bio }}
+      </h2>
+      <img src="../static/intro-photo.png" alt="Me on a swing" width="400"/>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Rachel Hu. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

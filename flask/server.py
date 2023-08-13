@@ -9,12 +9,16 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder='static')
 CORS(app)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-                     user=os.getenv("MYSQL_USER"),
-                     password=os.getenv("MYSQL_PASSWORD"),
-                     host=os.getenv("MYSQL_HOST"),
-                     port=3306
-                     )
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+                        user=os.getenv("MYSQL_USER"),
+                        password=os.getenv("MYSQL_PASSWORD"),
+                        host=os.getenv("MYSQL_HOST"),
+                        port=3306
+                        )
 
 class TimelinePost(Model):
     name = CharField()
@@ -25,19 +29,22 @@ class TimelinePost(Model):
     class Meta:
         database = mydb
 
-mydb.connect()
-mydb.create_tables([TimelinePost])
-
 # Timeline Posts
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['username']
-    email = request.form['email']
-    content = request.form['content']
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    name = request.form.get('username')
+    email = request.form.get('email')
+    content = request.form.get('content')
+    # Add validation checking for the parameters
+    if not name or name == "":
+        return jsonify({"error": "Invalid name"}), 400
+    if not content or content == "":
+        return jsonify({"error": "Invalid content"}), 400
+    if not email or '@' not in email:
+        return jsonify({"error": "Invalid email"}), 400
     
-    referring_url = request.referrer
-    return redirect(referring_url)
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    return model_to_dict(timeline_post)
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -84,10 +91,19 @@ def detail_section():
     rendered_data = render_template('detail_section.html', position=position, company=company, description=description, image_link=image_link)
     return jsonify(rendered_data=rendered_data)
 
+# Create pages for testing, main pages hosted with React
+@app.route('/')
+def home():
+    title = "Rachel Hu"
+    bio = "I'm entering my 3rd year in Computer Science at the University of Washington and have built strong skills in communication, leadership, and writing quality code. I aspire to continue growing as a software engineer and creating cool things!"
+    return render_template('home_demo.html', title=title, bio=bio)
+
 # Route for serving static files
 @app.route('/static/<path:path>')
 def serve_static(path):
     return app.send_static_file(path)
 
 if __name__ == '__main__':
+    mydb.connect()
+    mydb.create_tables([TimelinePost])
     app.run(port=5000)
