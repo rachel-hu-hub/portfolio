@@ -43,16 +43,18 @@ export default function About() {
             </Typography>
             <Typography variant="body1" color={"neutral.contrastText"}>
               <br />I aspire to continue growing as a software engineer and
-              creating cool things! While your here, be sure to say hi:
+              creating cool things! While you are here, be sure to say hi:
             </Typography>
             <Button
               variant="outlined"
               color="primary"
-              style={{ width: 300, height: 80, marginTop: 50 }}
+              style={{ width: 350, height: 80, marginTop: 50 }}
               target="blank"
               href="https://www.linkedin.com/in/rachehu/"
             >
-              <Typography variant="body1">get in touch {">"} </Typography>
+              <Typography variant="body1">
+                Get in touch on Linkedin {">"}{" "}
+              </Typography>
             </Button>
           </Box>
         </Box>
