@@ -37,11 +37,17 @@ export default function Projects() {
           />
         </Box>
         <Box display={"flex"} justifyContent={"center"}>
-          <SmallVerticalProject
-            image={PlatformerDemo}
-            title="2D Platformer"
-            description="Mobile adventure game built with Unity"
-          />
+          <Link
+            href="https://play.google.com/store/apps/developer?id=Rachel+Seattle"
+            underline="none"
+            target="blank"
+          >
+            <SmallVerticalProject
+              image={PlatformerDemo}
+              title="2D Platformer"
+              description="Mobile adventure game built with Unity"
+            />
+          </Link>
           <SmallVerticalProject
             image={SearchDemo}
             title="Search Engine"
